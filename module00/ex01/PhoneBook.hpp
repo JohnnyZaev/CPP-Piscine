@@ -6,7 +6,7 @@
 /*   By: gvarys <gvarys@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:22:09 by gvarys            #+#    #+#             */
-/*   Updated: 2022/03/15 14:01:41 by gvarys           ###   ########.fr       */
+/*   Updated: 2022/03/18 12:02:44 by gvarys           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
 
 	void	quit(void);
 	void	add(void);
+	void	search(void);
 };
 
 #endif
