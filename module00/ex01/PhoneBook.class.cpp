@@ -6,7 +6,7 @@
 /*   By: gvarys <gvarys@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:26:02 by gvarys            #+#    #+#             */
-/*   Updated: 2022/03/18 16:15:29 by gvarys           ###   ########.fr       */
+/*   Updated: 2022/03/18 16:37:00 by gvarys           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	PhoneBook::search(void)
 	}
 	if (index < 0 || index > 7)
 	{
-		std::cout << std::endl << "Index error" << std::endl << std::endl;
+		std::cout << std::endl << "Index error\n"<< std::endl;
 		return ;
 	}
 	this->_contacts[index].displayFullInfo();

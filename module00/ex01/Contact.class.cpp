@@ -6,7 +6,7 @@
 /*   By: gvarys <gvarys@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:21:23 by gvarys            #+#    #+#             */
-/*   Updated: 2022/03/18 15:16:56 by gvarys           ###   ########.fr       */
+/*   Updated: 2022/03/18 16:37:15 by gvarys           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,5 @@ void	Contact::displayFullInfo(void)
 	std::cout << "Last name: " << this->_lastName << std::endl;
 	std::cout << "Nickname: " << this->_nickname << std::endl;
 	std::cout << "Phone number: " << this->_phoneNumber << std::endl;
-	std::cout << "Darkest secret: " << this->_darkestSecret << std::endl << std::endl;
+	std::cout << "Darkest secret: " << this->_darkestSecret << "\n" << std::endl;
 }

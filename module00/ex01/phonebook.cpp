@@ -6,7 +6,7 @@
 /*   By: gvarys <gvarys@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:23:32 by gvarys            #+#    #+#             */
-/*   Updated: 2022/03/18 16:17:19 by gvarys           ###   ########.fr       */
+/*   Updated: 2022/03/18 16:48:50 by gvarys           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int main(void)
 
 	while (true)
 	{
+		line.clear();
+		std::cin.clear();
 		std::cout << ">";
 		std::getline(std::cin, line);
 		if (std::cin.eof())
@@ -41,7 +43,7 @@ int main(void)
 			phoneBook.add();
 		else if (!line.compare("SEARCH"))
 			phoneBook.search();
-		else
+		else if (line.compare(""))
 			std::cout << "PhoneBook can only accept ADD SEARCH EXIT commands" << std::endl;	
 	}
 }
