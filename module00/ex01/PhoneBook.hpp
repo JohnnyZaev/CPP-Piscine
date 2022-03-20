@@ -6,7 +6,7 @@
 /*   By: gvarys <gvarys@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:22:09 by gvarys            #+#    #+#             */
-/*   Updated: 2022/03/18 12:02:44 by gvarys           ###   ########.fr       */
+/*   Updated: 2022/03/18 17:15:39 by gvarys           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PhoneBook
 private:
 	
 	Contact _contacts[8];
-	int	_lastContact;
+	size_t	_lastContact;
 	
 public:
 	PhoneBook();

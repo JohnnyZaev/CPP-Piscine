@@ -6,7 +6,7 @@
 /*   By: gvarys <gvarys@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:26:02 by gvarys            #+#    #+#             */
-/*   Updated: 2022/03/18 16:37:00 by gvarys           ###   ########.fr       */
+/*   Updated: 2022/03/18 17:18:46 by gvarys           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ void	PhoneBook::search(void)
 	std::cout << "Write index of contact to display full information: ";
 	while (!(std::cin >> index)) 
 	{
+		std::cout << std::endl << "Enter a valid integer, try again: ";
 		if (std::cin.eof())
 		{
-			std::cout << std::endl;
 			std::cin.clear();
 			clearerr(stdin);
+			continue ;
 		}
-		std::cout << "Enter a valid integer, try again: ";
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<int>::max(), '\n');
 		clearerr(stdin);
