@@ -6,7 +6,7 @@
 #    By: gvarys <gvarys@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 12:39:54 by gvarys            #+#    #+#              #
-#    Updated: 2022/03/15 14:38:54 by gvarys           ###   ########.fr        #
+#    Updated: 2022/03/22 10:24:43 by gvarys           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,9 @@ NAME	=	phone_book
 CC		=	c++
 
 CFLAGS	=	-Wall -Wextra -Werror  -std=c++98
+
+HEADERS	=	Contact.hpp\
+			PhoneBook.hpp\
 
 SRC		=	phonebook.cpp\
 			PhoneBook.class.cpp\
@@ -27,7 +30,7 @@ all		:	$(NAME)
 $(NAME)	:	$(OBJS)
 				$(CC) $(CFLAGS) $(OBJS) -o $@
 
-%.o		:	%.cpp
+%.o		:	%.cpp $(HEADERS)
 				$(CC) $(CFLAGS) -c $< -o $@
 
 clean	:
