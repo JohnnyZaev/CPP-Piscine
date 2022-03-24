@@ -6,6 +6,11 @@ Zombie::Zombie(std::string name)
 	this->announce();
 }
 
+Zombie::Zombie()
+{
+
+}
+
 Zombie::~Zombie()
 {
 	std::cout << this->_name << " is destroyed..." << std::endl;
@@ -14,4 +19,9 @@ Zombie::~Zombie()
 void Zombie::announce(void)
 {
 	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void Zombie::setName(std::string name)
+{
+    this->_name = name;
 }
