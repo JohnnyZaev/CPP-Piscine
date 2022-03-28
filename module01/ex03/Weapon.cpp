@@ -1,5 +1,18 @@
-//
-// Created by Johnny Zaev on 25.03.2022.
-//
-
 #include "Weapon.h"
+
+Weapon::Weapon(std::string type)
+{
+    this->_type = type;
+}
+
+Weapon::~Weapon() {}
+
+void Weapon::setType(std::string type)
+{
+    this->_type = type;
+}
+
+const std::string &Weapon::getType()
+{
+    return (this->_type);
+}

@@ -16,10 +16,14 @@ CC		=	c++
 
 CFLAGS	=	-Wall -Wextra -Werror  -std=c++98
 
-HEADERS	=	Weapon.h
+HEADERS	=	Weapon.h\
+			HumanA.h\
+			HumanB.h\
 
 SRC		=	main.cpp\
 			Weapon.cpp\
+			HumanA.cpp\
+			HumanB.cpp\
 
 OBJS		=	$(patsubst %.cpp, %.o, $(SRC))
 
