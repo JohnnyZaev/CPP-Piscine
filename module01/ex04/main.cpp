@@ -11,6 +11,7 @@ int replaceStringInFile(std::string s1, std::string s2, std::string infile)
     outfile = infile + ".replace";
     if (fileFrom.open(infile))
         return (1);
+
     return (0);
 }
 
