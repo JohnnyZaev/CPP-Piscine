@@ -34,7 +34,7 @@ void Harl::complain(std::string level)
 		i++;
 	switch (i) {
 		case 4:
-			std::cerr << "Error: Karl can only accept DEBUG INFO WARNING or ERROR. Please try again with 1 of this arguments" << std::endl;
+			std::cerr << "[ Probably complaining about insignificant problems ]" << std::endl;
 			return ;
 		case 0:
 			(this->*functions[i++])();
