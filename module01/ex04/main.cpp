@@ -9,7 +9,7 @@ void RemoveWordFromLine(std::string &line, const std::string &word1, const std::
 	{
 		line.erase(n, word1.length());
 		line.insert(n, word2);
-		n = line.find(word1);
+		n = line.find(word1, n + word2.length());
 	}
 }
 
