@@ -30,7 +30,19 @@ void Harl::complain(std::string level)
 
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void (Harl::*functions[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	while (levels[i] != level)
+	while (levels[i] != level && i < 4)
 		i++;
-	(this->*functions[i])();
+	switch (i) {
+		case 4:
+			std::cerr << "Error: Karl can only accept DEBUG INFO WARNING or ERROR. Please try again with 1 of this arguments" << std::endl;
+			return ;
+		case 0:
+			(this->*functions[i++])();
+		case 1:
+			(this->*functions[i++])();
+		case 2:
+			(this->*functions[i++])();
+		case 3:
+			(this->*functions[i])();
+	}
 }

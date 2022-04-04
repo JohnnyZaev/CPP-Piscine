@@ -1,14 +1,18 @@
 #include "Harl.h"
 #include <thread>
 
-int main(void)
+int main(int argc, char **argv)
 {
-	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	Harl harl;
-
-	while (true)
+	if (argc != 2)
 	{
-		harl.complain(levels[rand() % 4]);
-		std::this_thread::sleep_until(std::chrono::system_clock::now() + std::chrono::seconds(3));
+		std::cerr << "Error: bad number of arguments" << std::endl;
+		return (1);
 	}
+
+	Harl harl;
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+
+	harl.complain(argv[1]);
+	return (0);
 }
