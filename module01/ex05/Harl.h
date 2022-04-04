@@ -1,6 +1,7 @@
 #ifndef CPP_PISCINE_HARL_H
 #define CPP_PISCINE_HARL_H
 
+#include <iostream>
 
 class Harl {
 private:
