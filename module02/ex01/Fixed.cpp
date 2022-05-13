@@ -1,9 +1,18 @@
 #include "Fixed.hpp"
-#include <iostream>
 
 Fixed::Fixed() {
 	std::cout << "Default constructor called" << std::endl;
-	number = 0;
+	_number = 0;
+}
+
+Fixed::Fixed(const int number) {
+	std::cout << "Int constructor called" << std::endl;
+	_number = number << _bits;
+}
+
+Fixed::Fixed(const float number) {
+	std::cout << "Float constructor called" << std::endl;
+	_number = (int)std::roundf(number * (1 << _bits));
 }
 
 Fixed::~Fixed() {
@@ -12,7 +21,7 @@ Fixed::~Fixed() {
 
 Fixed &Fixed::operator=(const Fixed &fixed) {
 	std::cout << "Copy assignment operator called" << std::endl;
-	number = fixed.getRawBits();
+	_number = fixed.getRawBits();
 	return *this;
 }
 
@@ -22,11 +31,22 @@ Fixed::Fixed(const Fixed &b) {
 }
 
 int Fixed::getRawBits() const {
-	std::cout << "getRawBits member function called" << std::endl;
-	return number;
+	return _number;
 }
 
 void Fixed::setRawBits(const int raw) {
-	std::cout << "setRawBits member function called" << std::endl;
-	number = raw;
+	_number = raw;
+}
+
+int Fixed::toInt() const {
+	return (_number >> _bits);
+}
+
+float Fixed::toFloat( void ) const
+{
+	return  ((_number) / (float)(1 << _bits));
+}
+
+std::ostream & operator<< (std::ostream &out, const Fixed &c){
+	return out << c.toFloat();
 }
