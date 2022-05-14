@@ -50,3 +50,32 @@ float Fixed::toFloat( void ) const
 std::ostream & operator<< (std::ostream &out, const Fixed &c){
 	return out << c.toFloat();
 }
+
+Fixed	&Fixed::operator++ ( void ) {
+	++(this->_number);
+	return (*this);
+}
+
+Fixed	&Fixed::operator-- ( void ) {
+	--(this->_number);
+	return (*this);
+}
+
+Fixed Fixed::operator++(int) {
+	Fixed old(*this);
+	++(this->_number);
+	return (old);
+}
+
+Fixed Fixed::operator--(int) {
+	Fixed old(*this);
+	--(this->_number);
+	return (old);
+}
+
+Fixed	Fixed::operator* ( const Fixed &other ) const {
+	Fixed	number;
+
+	number._number = (this->_number * other._number) >> this->_bits;
+	return (number);
+}
