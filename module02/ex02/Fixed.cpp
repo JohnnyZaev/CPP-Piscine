@@ -51,6 +51,30 @@ std::ostream & operator<< (std::ostream &out, const Fixed &c){
 	return out << c.toFloat();
 }
 
+bool Fixed::operator<(const Fixed &other) const {
+	return (this->_number >> this->_bits < other._number >> this->_bits);
+}
+
+bool Fixed::operator<=(const Fixed &other) const {
+	return (this->_number >> this->_bits <= other._number >> this->_bits);
+}
+
+bool Fixed::operator==(const Fixed &other) const {
+	return (this->_number >> this->_bits == other._number >> this->_bits);
+}
+
+bool Fixed::operator>(const Fixed &other) const {
+	return (this->_number >> this->_bits > other._number >> this->_bits);
+}
+
+bool Fixed::operator>=(const Fixed &other) const {
+	return (this->_number >> this->_bits >= other._number >> this->_bits);
+}
+
+bool Fixed::operator!=(const Fixed &other) const {
+	return (this->_number >> this->_bits != other._number >> this->_bits);
+}
+
 Fixed	&Fixed::operator++ ( void ) {
 	++(this->_number);
 	return (*this);
@@ -77,5 +101,26 @@ Fixed	Fixed::operator* ( const Fixed &other ) const {
 	Fixed	number;
 
 	number._number = (this->_number * other._number) >> this->_bits;
+	return (number);
+}
+
+Fixed Fixed::operator+(const Fixed &other) const {
+	Fixed	number;
+
+	number._number = (this->_number + other._number) >> this->_bits;
+	return (number);
+}
+
+Fixed Fixed::operator-(const Fixed &other) const {
+	Fixed	number;
+
+	number._number = (this->_number - other._number) >> this->_bits;
+	return (number);
+}
+
+Fixed Fixed::operator/(const Fixed &other) const {
+	Fixed	number;
+
+	number._number = (this->_number / other._number) >> this->_bits;
 	return (number);
 }
