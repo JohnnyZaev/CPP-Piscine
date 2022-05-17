@@ -98,31 +98,19 @@ Fixed Fixed::operator--(int) {
 }
 
 Fixed	Fixed::operator* ( const Fixed &other ) const {
-	Fixed	number;
-
-	number._number = (this->_number * other._number) >> this->_bits;
-	return (number);
+	return (Fixed(this->toFloat() * other.toFloat()));
 }
 
 Fixed Fixed::operator+(const Fixed &other) const {
-	Fixed	number;
-
-	number._number = (this->_number + other._number) >> this->_bits;
-	return (number);
+	return (Fixed(this->toFloat() + other.toFloat()));
 }
 
 Fixed Fixed::operator-(const Fixed &other) const {
-	Fixed	number;
-
-	number._number = (this->_number - other._number) >> this->_bits;
-	return (number);
+	return (Fixed(this->toFloat() - other.toFloat()));
 }
 
 Fixed Fixed::operator/(const Fixed &other) const {
-	Fixed	number;
-
-	number._number = (this->_number / other._number) >> this->_bits;
-	return (number);
+	return (Fixed(this->toFloat() / other.toFloat()));
 }
 
 Fixed &Fixed::min(Fixed &a, Fixed &b) {

@@ -4,10 +4,13 @@ CC		=	c++
 
 CFLAGS	=	-Wall -Wextra -Werror  -std=c++98
 
-HEADERS	=	Fixed.hpp
+HEADERS	=	Fixed.hpp\
+			Point.hpp\
 
 SRC		=	main.cpp\
 			Fixed.cpp\
+			Point.cpp\
+			bsp.cpp\
 
 OBJS		=	$(patsubst %.cpp, %.o, $(SRC))
 
