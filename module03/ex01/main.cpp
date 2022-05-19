@@ -16,5 +16,7 @@ int main()
 	a.takeDamage(1);
 	a.beRepaired(5);
 	a.guardGate();
+	a.takeDamage(100);
+	a.guardGate();
 	return 0;
 }

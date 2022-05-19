@@ -4,16 +4,17 @@
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : _name(name), _health(100), _energy(50), _attackDamage(20) {
-	std::cout << "ScavTrap " << this->_name << " is created!" << std::endl;
+ScavTrap::ScavTrap(std::string name) {
+	std::cout << "ScavTrap " << this->getName() << " is created!" << std::endl;
+	this->setStarterAttributes(name, 100, 50, 20);
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << "ScavTrap " << this->_name << " is destroyed!" << std::endl;
+	std::cout << "ScavTrap " << this->getName() << " is destroyed!" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
-	this->_name = other._name;
+	this->setName(other.getName());
 	return (*this);
 }
 
@@ -22,29 +23,15 @@ ScavTrap::ScavTrap(const ClapTrap &b) {
 }
 
 void ScavTrap::attack(const std::string &target) {
-	if (!this->_health || !this->_energy)
+	if (!this->getHealth() || !this->getEnergy())
 		return ;
-	std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
-	this->_energy--;
-}
-
-void ScavTrap::takeDamage(unsigned int amount) {
-	if (!this->_health)
-		return ;
-	std::cout << "ScavTrap " << this->_name << " takes " << amount << " damage" << std::endl;
-	this->_health -= amount;
-	if (this->_health < 0)
-		this->_health = 0;
-}
-
-void ScavTrap::beRepaired(unsigned int amount) {
-	if (!this->_health || !this->_energy)
-		return ;
-	std::cout << "ScavTrap " << this->_name << " repair himself " << amount << " health" << std::endl;
-	this->_health += amount;
-	this->_energy--;
+	std::cout << "ScavTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+	this->consumeEnergy();
 }
 
 void ScavTrap::guardGate() {
-	std::cout <<  "ScavTrap" << this->_name << " is now in Gatekeeper mode!" << std::endl;
+	if (!this->getHealth() || !this->getEnergy())
+		return ;
+	std::cout <<  "ScavTrap" << this->getName() << " is now in Gatekeeper mode!" << std::endl;
+	this->consumeEnergy();
 }
