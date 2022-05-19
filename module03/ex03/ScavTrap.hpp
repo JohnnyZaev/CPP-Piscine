@@ -7,11 +7,14 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
+protected:
+	int getSTEnergy();
+	ScavTrap();
 public:
 	ScavTrap(std::string name);
 	~ScavTrap();
-	ScavTrap(const ScavTrap &b);
+	ScavTrap(const ClapTrap &b);
 	ScavTrap& operator= (const ScavTrap& other);
 	void attack(const std::string& target);
 	void guardGate();

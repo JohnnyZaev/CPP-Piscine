@@ -4,6 +4,11 @@
 
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap() {
+	std::cout << "ScavTrap " << " is created!" << std::endl;
+	setEnergy(50);
+}
+
 ScavTrap::ScavTrap(std::string name) {
 	std::cout << "ScavTrap " << this->getName() << " is created!" << std::endl;
 	this->setStarterAttributes(name, 100, 50, 20);
@@ -18,7 +23,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
 	return (*this);
 }
 
-ScavTrap::ScavTrap(const ScavTrap &b) {
+ScavTrap::ScavTrap(const ClapTrap &b) {
 	*this = b;
 }
 
@@ -34,4 +39,8 @@ void ScavTrap::guardGate() {
 		return ;
 	std::cout <<  "ScavTrap" << this->getName() << " is now in Gatekeeper mode!" << std::endl;
 	this->consumeEnergy();
+}
+
+int ScavTrap::getSTEnergy() {
+	return this->getEnergy();
 }

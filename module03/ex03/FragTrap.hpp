@@ -7,13 +7,16 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap{
+class FragTrap : virtual public ClapTrap{
+protected:
+	FragTrap();
+	int getFTHealth();
+	int getFTAttackDamage();
 public:
 	FragTrap(std::string name);
 	~FragTrap();
 	FragTrap(const FragTrap &b);
 	FragTrap& operator= (const FragTrap& other);
-	void attack(const std::string& target);
 	void highFivesGuys(void);
 };
 

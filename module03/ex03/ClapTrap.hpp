@@ -14,6 +14,7 @@ private:
 	int _energy;
 	int _attackDamage;
 protected:
+	std::string name;
 	ClapTrap();
 	void setStarterAttributes(std::string name, int health, int energy, int attackDamage);
 	std::string getName() const;
@@ -22,6 +23,9 @@ protected:
 	int getAttackDamage();
 	void setName(std::string name);
 	void consumeEnergy();
+	void setHealth(int health);
+	void setEnergy(int energy);
+	void setAttackDamage(int attackDamage);
 public:
 	ClapTrap(std::string name);
 	~ClapTrap();
