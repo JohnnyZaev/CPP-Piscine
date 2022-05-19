@@ -3,11 +3,10 @@
 //
 
 #include "ScavTrap.hpp"
-#include "FragTrap.hpp"
 
 int main()
 {
-	FragTrap a("Bad Boy");
+	ScavTrap a("Bad Boy");
 
 	a.attack("someshit");
 	a.takeDamage(5);
@@ -16,6 +15,8 @@ int main()
 	a.beRepaired(0);
 	a.takeDamage(1);
 	a.beRepaired(5);
-	a.highFivesGuys();
+	a.guardGate();
+	a.takeDamage(100);
+	a.guardGate();
 	return 0;
 }

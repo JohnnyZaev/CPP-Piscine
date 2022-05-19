@@ -8,19 +8,12 @@
 #include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap {
-private:
-	std::string _name;
-	int _health;
-	int _energy;
-	int _attackDamage;
 public:
 	ScavTrap(std::string name);
 	~ScavTrap();
 	ScavTrap(const ClapTrap &b);
 	ScavTrap& operator= (const ScavTrap& other);
 	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
 	void guardGate();
 };
 

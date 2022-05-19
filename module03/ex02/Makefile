@@ -1,4 +1,4 @@
-NAME	=	FragTrap
+NAME	=	ScavTrap
 
 CC		=	c++
 
@@ -6,12 +6,10 @@ CFLAGS	=	-Wall -Wextra -Werror  -std=c++98
 
 HEADERS	=	ClapTrap.hpp\
 			ScavTrap.hpp\
-			FragTrap.hpp\
 
 SRC		=	main.cpp\
 			ClapTrap.cpp\
 			ScavTrap.cpp\
-			FragTrap.cpp\
 
 OBJS		=	$(patsubst %.cpp, %.o, $(SRC))
 

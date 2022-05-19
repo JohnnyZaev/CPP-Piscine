@@ -48,3 +48,34 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	this->_health += amount;
 	this->_energy--;
 }
+
+void ClapTrap::setStarterAttributes(std::string name, int health, int energy, int attackDamage) {
+	this->_name = name;
+	this->_health = health;
+	this->_energy = energy;
+	this->_attackDamage = attackDamage;
+}
+
+int ClapTrap::getHealth() {
+	return this->_health;
+}
+
+int ClapTrap::getEnergy() {
+	return this->_energy;
+}
+
+int ClapTrap::getAttackDamage() {
+	return this->_attackDamage;
+}
+
+std::string ClapTrap::getName() const{
+	return this->_name;
+}
+
+void ClapTrap::consumeEnergy() {
+	this->_energy--;
+}
+
+void ClapTrap::setName(std::string name){
+	this->_name = name;
+}
