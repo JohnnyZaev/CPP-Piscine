@@ -23,5 +23,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &b) {
 }
 
 void DiamondTrap::whoAmI() {
+	if (!this->getHealth())
+		return ;
 	std::cout << "I'm " << this->_name << " or " << getName() << "?" << std::endl;
 }
