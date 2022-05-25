@@ -8,13 +8,11 @@
 #include <iostream>
 
 class ClapTrap {
-private:
+protected:
 	std::string _name;
 	int _health;
 	int _energy;
 	int _attackDamage;
-protected:
-	std::string name;
 	ClapTrap();
 	void setStarterAttributes(std::string name, int health, int energy, int attackDamage);
 	std::string getName() const;

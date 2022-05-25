@@ -10,7 +10,7 @@ DiamondTrap::DiamondTrap(std::string name) : _name(name) {
 }
 
 DiamondTrap::~DiamondTrap() {
-	std::cout << "DiamondTrap " << name << " is destroyed" << std::endl;
+	std::cout << "DiamondTrap " << _name << " is destroyed" << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other) {
