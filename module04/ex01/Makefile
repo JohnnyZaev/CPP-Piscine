@@ -1,4 +1,4 @@
-NAME	=	Animal
+NAME	=	Brain
 
 CC		=	c++
 
@@ -9,6 +9,7 @@ HEADERS	=	Animal.hpp\
 			Dog.hpp\
 			WrongAnimal.hpp\
 			WrongCat.hpp\
+			Brain.hpp\
 
 SRC		=	main.cpp\
 			Animal.cpp\
@@ -16,6 +17,7 @@ SRC		=	main.cpp\
 			Dog.cpp\
 			WrongAnimal.cpp\
 			WrongCat.cpp\
+			Brain.cpp\
 
 OBJS		=	$(patsubst %.cpp, %.o, $(SRC))
 

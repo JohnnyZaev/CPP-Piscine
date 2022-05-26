@@ -8,20 +8,13 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+	delete j;//should not create a leak
 	delete i;
-	delete j;
-	delete meta;
-	const WrongAnimal* newmeta = new WrongCat();
-	std::cout << newmeta->getType() << " " << std::endl;
-	newmeta->makeSound(); //will output the wrongAnimal sound!
-	delete newmeta;
+	Cat basic;
+	{
+		Cat tmp = basic;
+	}
 	return 0;
 }

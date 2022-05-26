@@ -6,6 +6,7 @@
 #define CPP_PISCINE_ANIMAL_HPP
 
 #include <iostream>
+#include "Brain.hpp"
 
 class Animal {
 protected:
