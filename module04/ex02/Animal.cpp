@@ -4,9 +4,13 @@
 
 #include "Animal.hpp"
 
-Animal::~Animal() {}
+Animal::~Animal() {
+	std::cout << "Animal is deleted" << std::endl;
+}
 
-Animal::Animal() {}
+Animal::Animal() {
+	std::cout << "Animal is created" << std::endl;
+}
 
 Animal &Animal::operator=(const Animal &other) {
 	this->type = other.type;
@@ -15,10 +19,6 @@ Animal &Animal::operator=(const Animal &other) {
 
 Animal::Animal(const Animal &b) {
 	*this = b;
-}
-
-void Animal::makeSound() const {
-	std::cout << "Undefined sound" << std::endl;
 }
 
 std::string Animal::getType() const {
