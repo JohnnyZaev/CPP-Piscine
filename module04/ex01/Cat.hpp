@@ -12,7 +12,7 @@ private:
 	Brain *brain;
 public:
 	Cat();
-	~Cat();
+	virtual ~Cat();
 	Cat(const Cat &b);
 	Cat &operator= (const Cat &other);
 	virtual void makeSound() const;
