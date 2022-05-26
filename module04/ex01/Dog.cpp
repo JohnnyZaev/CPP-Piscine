@@ -5,9 +5,9 @@
 #include "Dog.hpp"
 
 Dog::Dog() {
+	std::cout << "Dog is created" << std::endl;
 	type = "Dog";
 	brain = new Brain();
-	std::cout << "Dog is created" << std::endl;
 }
 
 Dog::~Dog() {
@@ -23,7 +23,6 @@ Dog::Dog(const Dog &b) {
 }
 
 Dog &Dog::operator=(const Dog &other) {
-	std::cout << "Assignement operator for Dog called" << std::endl;
 	this->type = other.type;
 	*(this->brain) = *(other.getBrain());
 	return *this;

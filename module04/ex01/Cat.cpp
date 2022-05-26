@@ -5,9 +5,9 @@
 #include "Cat.hpp"
 
 Cat::Cat() {
+	std::cout << "Cat is created" << std::endl;
 	type = "Cat";
 	brain = new Brain();
-	std::cout << "Cat is created" << std::endl;
 }
 
 Cat::~Cat() {
