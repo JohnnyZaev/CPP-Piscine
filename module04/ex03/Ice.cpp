@@ -7,7 +7,7 @@
 Ice::Ice( void )
 {
 	std::cout << "Ice is created" << std::endl;
-	this->type = "ice";
+	this->_type = "ice";
 }
 Ice::Ice( Ice const & src ): AMateria("ice")
 {

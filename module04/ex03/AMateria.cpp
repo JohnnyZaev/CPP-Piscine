@@ -4,6 +4,10 @@
 
 #include "AMateria.hpp"
 
+AMateria::AMateria() {
+	std::cout << "Amateria is created" << std::endl;
+}
+
 AMateria::AMateria(const std::string &type) {
 	std::cout << "Amateria is created" << std::endl;
 	_type = type;
