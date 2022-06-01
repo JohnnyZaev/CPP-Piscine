@@ -25,25 +25,25 @@ Character::~Character()
 {
 	std::cout << "Character is destroyed" << std::endl;
 }
-Character &Character::operator=( Character const &rhs)
+Character &Character::operator=(Character const &other)
 {
 	this->_number_equipped = 0;
 	for (int i = 0; i < Character::_inventory_size; i++)
 	{
 		if (this->_inventory[i])
 			delete this->_inventory[i];
-		this->_inventory[i] = rhs._inventory[i];
-		if (rhs._inventory[i])
+		this->_inventory[i] = other._inventory[i];
+		if (other._inventory[i])
 			this->_number_equipped++;
 	}
-	this->_name = rhs.getName();
+	this->_name = other.getName();
 	return *this;
 }
 std::string const &Character::getName() const
 {
 	return (this->_name);
 }
-void Character::equip(AMateria* m)
+void Character::equip(AMateria *m)
 {
 	if (this->_number_equipped < Character::_inventory_size)
 	{

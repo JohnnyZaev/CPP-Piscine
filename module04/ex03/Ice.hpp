@@ -5,13 +5,14 @@
 #ifndef CPP_PISCINE_ICE_HPP
 #define CPP_PISCINE_ICE_HPP
 
-#include "AMateria.hpp"
+# include "AMateria.hpp"
 
 class Ice : public AMateria{
 public:
 	Ice();
 	Ice(const Ice &src);
 	~Ice();
+
 	Ice &operator=(const Ice &other);
 	virtual AMateria *clone() const;
 	virtual void use(ICharacter& target);

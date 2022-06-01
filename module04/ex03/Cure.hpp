@@ -5,7 +5,7 @@
 #ifndef CPP_PISCINE_CURE_HPP
 #define CPP_PISCINE_CURE_HPP
 
-#include "AMateria.hpp"
+# include "AMateria.hpp"
 
 class Cure: public AMateria{
 public:

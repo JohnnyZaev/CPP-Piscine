@@ -2,7 +2,7 @@ NAME	=	Interfaces
 
 CC		=	c++
 
-CFLAGS	=	-Wall -Wextra -Werror  -std=c++98
+CFLAGS	=	-Wall -Wextra -Werror  -std=c++98 -g3
 
 HEADERS	=	AMateria.hpp\
 			Character.hpp\

@@ -5,8 +5,8 @@
 #ifndef CPP_PISCINE_AMATERIA_HPP
 #define CPP_PISCINE_AMATERIA_HPP
 
-#include <iostream>
-#include "ICharacter.hpp"
+# include <iostream>
+# include "ICharacter.hpp"
 
 class ICharacter;
 
@@ -17,6 +17,7 @@ public:
 	AMateria();
 	AMateria(std::string const & type);
 	virtual ~AMateria();
+
 	std::string const & getType() const;
 	virtual AMateria* clone() const = 0;
 	virtual void use(ICharacter& target) = 0;
