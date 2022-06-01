@@ -48,6 +48,7 @@ void MateriaSource::learnMateria(AMateria *materia_to_learn)
 				  << std::endl;
 	}
 }
+
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
 	for (int i = 0; i < MateriaSource::_materias_size && this->_materias[i]; i++)

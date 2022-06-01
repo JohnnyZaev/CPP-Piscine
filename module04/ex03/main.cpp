@@ -28,10 +28,17 @@ int main()
 	ben.printInventory();
 	ben.use(0, *herry);
 	ben.printInventory();
+	ben.equip(src->createMateria("ice"));
+	ben.equip(src->createMateria("ice"));
+	ben.equip(src->createMateria("ice"));
+	tmp = src->createMateria("ice");
+	ben.equip(tmp);
+	ben.printInventory();
 	herry->printInventory();
 	delete bob;
 	delete me;
 	delete src;
 	delete herry;
+	delete tmp; //5th space check
 	return 0;
 }

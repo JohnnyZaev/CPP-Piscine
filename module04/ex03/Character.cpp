@@ -7,23 +7,29 @@
 Character::Character(): _name(""), _number_equipped(0)
 {
 	std::cout << "Character is created" << std::endl;
-	for (int i = 0; i < Character::_inventory_size; i++)
+	for (int i = 0; i < Character::_inventory_size; i++) {
 		this->_inventory[i] = NULL;
+		this->_floor[i] = NULL;
+	}
 	return;
 }
 Character::Character( const std::string &name )
 {
 	std::cout << "Character is created" << std::endl;
-	for (int i = 0; i < Character::_inventory_size; i++)
+	for (int i = 0; i < Character::_inventory_size; i++) {
 		this->_inventory[i] = NULL;
+		this->_floor[i] = NULL;
+	}
 	this->_name = name;
 	return;
 }
 Character::Character( Character const & src )
 {
 	std::cout << "Character is copy created" << std::endl;
-	for (int i = 0; i < Character::_inventory_size; i++)
+	for (int i = 0; i < Character::_inventory_size; i++) {
 		this->_inventory[i] = NULL;
+		this->_floor[i] = NULL;
+	}
 	*this = src;
 }
 Character::~Character()
@@ -32,6 +38,8 @@ Character::~Character()
 	for (int i = 0; i < Character::_inventory_size; i++) {
 		if (this->_inventory[i])
 			delete this->_inventory[i];
+		if (this->_floor[i])
+			delete this->_floor[i];
 	}
 }
 Character &Character::operator=(Character const &other)
@@ -57,15 +65,16 @@ std::string const &Character::getName() const
 
 void Character::equip(AMateria *m)
 {
-	if (this->_number_equipped < Character::_inventory_size)
+	for (int i = 0; i < _inventory_size; i++)
 	{
-		this->_inventory[this->_number_equipped] = m;
-		this->_number_equipped++;
-		std::cout << "Equipped a " << m->getType() << std::endl;
+		if (this->_inventory[i] == NULL) {
+			this->_inventory[i] = m;
+			this->_number_equipped++;
+			std::cout << "Equipped a " << m->getType() << std::endl;
+			return ;
+		}
 	}
-	else
-		std::cout << "Couldn't equip a " << m->getType() << ", no more space"
-				<< std::endl;
+	std::cout << "Couldn't equip a " << m->getType() << ", no more space" << std::endl;
 }
 
 void Character::unequip(int idx)
@@ -73,14 +82,17 @@ void Character::unequip(int idx)
 	if (idx < 0 || idx > 3)
 		return;
 	if (this->_inventory[idx]) {
-		delete this->_inventory[idx];
+		this->_floor[idx] = this->_inventory[idx];
 		this->_inventory[idx] = NULL;
 	}
+	_number_equipped--;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
 	this->_inventory[idx]->use(target);
+	if (this->_floor[idx])
+		delete this->_floor[idx];
 	this->unequip(idx);
 }
 void Character::printInventory() const
