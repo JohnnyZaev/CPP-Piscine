@@ -26,7 +26,7 @@ all		:	$(NAME)
 $(NAME)	:	$(OBJS)
 				$(CC) $(CFLAGS) $(OBJS) -o $@
 
-%.o		:	%.cpp $(HEADERS)
+%.o		:	%.cpp $(HEADERS) Makefile
 				$(CC) $(CFLAGS) -c $< -o $@
 
 clean	:
