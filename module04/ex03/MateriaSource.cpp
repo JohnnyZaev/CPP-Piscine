@@ -57,6 +57,7 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 	}
 	return NULL;
 }
+
 void MateriaSource::printMaterias() const
 {
 	for (int i = 0; i < MateriaSource::_materias_size; i++)

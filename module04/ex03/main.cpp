@@ -18,9 +18,20 @@ int main()
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
-	me->printInventory();
+	Character *herry = new Character("Herry");
+	herry->equip(src->createMateria("ice"));
+	herry->equip(src->createMateria("cure"));
+	Character ben;
+	ben.equip(src->createMateria("cure"));
+	ben.printInventory();
+	ben = *herry;
+	ben.printInventory();
+	ben.use(0, *herry);
+	ben.printInventory();
+	herry->printInventory();
 	delete bob;
 	delete me;
 	delete src;
+	delete herry;
 	return 0;
 }

@@ -13,17 +13,26 @@ Character::Character(): _name(""), _number_equipped(0)
 }
 Character::Character( const std::string &name )
 {
-	*this = Character();
+	std::cout << "Character is created" << std::endl;
+	for (int i = 0; i < Character::_inventory_size; i++)
+		this->_inventory[i] = NULL;
 	this->_name = name;
 	return;
 }
 Character::Character( Character const & src )
 {
+	std::cout << "Character is copy created" << std::endl;
+	for (int i = 0; i < Character::_inventory_size; i++)
+		this->_inventory[i] = NULL;
 	*this = src;
 }
 Character::~Character()
 {
 	std::cout << "Character is destroyed" << std::endl;
+	for (int i = 0; i < Character::_inventory_size; i++) {
+		if (this->_inventory[i])
+			delete this->_inventory[i];
+	}
 }
 Character &Character::operator=(Character const &other)
 {
@@ -32,17 +41,20 @@ Character &Character::operator=(Character const &other)
 	{
 		if (this->_inventory[i])
 			delete this->_inventory[i];
-		this->_inventory[i] = other._inventory[i];
+		if (other._inventory[i])
+			this->_inventory[i] = other._inventory[i]->clone();
 		if (other._inventory[i])
 			this->_number_equipped++;
 	}
 	this->_name = other.getName();
 	return *this;
 }
+
 std::string const &Character::getName() const
 {
 	return (this->_name);
 }
+
 void Character::equip(AMateria *m)
 {
 	if (this->_number_equipped < Character::_inventory_size)
@@ -53,19 +65,19 @@ void Character::equip(AMateria *m)
 	}
 	else
 		std::cout << "Couldn't equip a " << m->getType() << ", no more space"
-				  << std::endl;
+				<< std::endl;
 }
+
 void Character::unequip(int idx)
 {
-	int i;
-	i = idx + 1;
-	while (i < Character::_inventory_size && this->_inventory[i])
-	{
-		this->_inventory[i - 1] = this->_inventory[i];
-		i++;
+	if (idx < 0 || idx > 3)
+		return;
+	if (this->_inventory[idx]) {
+		delete this->_inventory[idx];
+		this->_inventory[idx] = NULL;
 	}
-	this->_inventory[i] = NULL;
 }
+
 void Character::use(int idx, ICharacter& target)
 {
 	this->_inventory[idx]->use(target);
@@ -76,7 +88,7 @@ void Character::printInventory() const
 	for (int i = 0; i < Character::_inventory_size; i++)
 	{
 		if (this->_inventory[i])
-			std::cout << i << ": " << this->_inventory[i] << std::endl;
+			std::cout << i << ": " << this->_inventory[i]->getType() << std::endl;
 		else
 			std::cout << i << ": Empty" << std::endl;
 	}

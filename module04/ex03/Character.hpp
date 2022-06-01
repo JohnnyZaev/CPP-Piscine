@@ -9,12 +9,12 @@
 
 class Character : public ICharacter{
 private:
-	Character();
 	static const int _inventory_size = 4;
 	std::string _name;
 	AMateria *_inventory[Character::_inventory_size];
 	int _number_equipped;
 public:
+	Character();
 	Character(const std::string &name );
 	Character(const Character &src );
 	~Character();
