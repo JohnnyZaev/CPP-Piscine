@@ -12,6 +12,16 @@ private:
 	const std::string _name;
 	int _grade;
 public:
+	Bureaucrat();
+	Bureaucrat(const Bureaucrat &other);
+	~Bureaucrat();
+
+	Bureaucrat &operator=(const Bureaucrat &other);
+	int getGrade();
+	std::string getName();
+	void incrementGrade();
+	void decrementGrade();
+
 	class GradeTooHighException: public std::exception {
 		virtual const char* what() const throw();
 	};
@@ -19,6 +29,8 @@ public:
 		virtual const char* what() const throw();
 	};
 };
+
+std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat);
 
 
 #endif //CPP_PISCINE_BUREAUCRAT_HPP
