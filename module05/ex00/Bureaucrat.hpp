@@ -14,11 +14,12 @@ private:
 public:
 	Bureaucrat();
 	Bureaucrat(const Bureaucrat &other);
+	Bureaucrat(std::string name, int grade);
 	~Bureaucrat();
 
 	Bureaucrat &operator=(const Bureaucrat &other);
-	int getGrade();
-	std::string getName();
+	int getGrade() const;
+	std::string getName() const;
 	void incrementGrade();
 	void decrementGrade();
 
