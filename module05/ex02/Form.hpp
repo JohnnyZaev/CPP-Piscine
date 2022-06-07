@@ -16,6 +16,7 @@ private:
 	bool _isSigned;
 	const int _gradeToSign;
 	const int _gradeToExecute;
+	std::string _target;
 public:
 	Form();
 	Form(const Form &other);
@@ -27,6 +28,8 @@ public:
 	int getGradeToSign() const;
 	int getGradeToExecute() const;
 	bool beSigned(Bureaucrat &bureaucrat);
+	virtual void execute(Bureaucrat const &executor) const = 0;
+
 
 	Form &operator=(const Form &other);
 

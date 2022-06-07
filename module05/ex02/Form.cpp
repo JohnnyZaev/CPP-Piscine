@@ -45,7 +45,6 @@ bool Form::beSigned(Bureaucrat &bureaucrat) {
 		return (this->_isSigned = true);
 	else
 		throw GradeTooLowException();
-	return false;
 }
 
 const char *Form::GradeTooLowException::what() const throw() {
