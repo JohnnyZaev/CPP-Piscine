@@ -3,65 +3,65 @@
 //
 
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int	main(void)
 {
+	Form			*form = NULL;
+	Bureaucrat		bob("bob", 1);
+	Bureaucrat		phil("phil", 40);
+	Bureaucrat		luc("luc", 150);
+//	try
+//	{
+//		form = new PresidentialPardonForm("28Z");
+//		form->execute(bob);
+//		delete form;
+//		form = NULL;
+//	}
+//	catch (std::exception &e)
+//	{
+//		std::cout << e.what() << std::endl;
+//	}
+//	try
+//	{
+//		form = new PresidentialPardonForm("28A");
+//		form->beSigned(bob);
+//		form->execute(bob);
+//		delete form;
+//		form = NULL;
+//	}
+//	catch (std::exception &e)
+//	{
+//		std::cout << e.what() << std::endl;
+//	}
+//	try
+//	{
+//		form = new RobotomyRequestForm("28B");
+//		form->beSigned(bob);
+//		form->execute(phil);
+//		form->execute(phil);
+//		form->execute(phil);
+//		form->execute(phil);
+//		form->execute(phil);
+//		form->execute(phil);
+//		form->execute(phil);
+//		form->execute(phil);
+//		form->execute(phil);
+//		delete form;
+//		form = NULL;
+//	}
+//	catch (std::exception &e)
+//	{
+//		std::cout << e.what() << std::endl;
+//	}
 	try
 	{
-		Form	f("Form1", 0, 1);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-	try
-	{
-		Form	f("Form2", 1, 0);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-	try
-	{
-		Form	f("Form3", 1, 151);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-	try
-	{
-		Form	f("Form4", 151, 1);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-	try
-	{
-		Bureaucrat	john = Bureaucrat("Johnny", 1);
-		Form		f("Form5", 150, 150);
-		std::cout << f << std::endl;
-		john.signForm(f);
-		std::cout << f << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-	try
-	{
-		Bureaucrat	joe = Bureaucrat("Jared", 10);
-		Form		f("Form6", 1, 1);
-		std::cout << f << std::endl;
-		joe.signForm(f);
-		std::cout << f << std::endl;
+		form = new ShrubberyCreationForm("28C");
+		form->beSigned(bob);
+		phil.executeForm(*form);
+		form->execute(luc);
+		delete form;
+		form = NULL;
 	}
 	catch (std::exception &e)
 	{

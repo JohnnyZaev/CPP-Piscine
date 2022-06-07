@@ -8,7 +8,7 @@ Form::Form() : _name("Form"), _isSigned(false), _gradeToSign(150), _gradeToExecu
 
 Form::~Form() {}
 
-Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) {
+Form::Form(std::string name, int gradeToSign, int gradeToExecute, std::string target) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute), _target(target) {
 	if (gradeToSign > 150 || gradeToExecute > 150)
 		throw GradeTooLowException();
 	if (gradeToSign < 1 || gradeToExecute < 1)
@@ -34,6 +34,14 @@ int Form::getGradeToExecute() const {
 
 int Form::getGradeToSign() const {
 	return _gradeToSign;
+}
+
+std::string Form::getTarget() const {
+	return this->_target;
+}
+
+void Form::setTarget(std::string target) {
+	this->_target = target;
 }
 
 bool Form::isSigned() const {
