@@ -4,7 +4,7 @@
 
 #include "Form.hpp"
 
-Form::Form() : _name("Form"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {}
+Form::Form() : _name("Form"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150), _target("Unknown") {}
 
 Form::~Form() {}
 
