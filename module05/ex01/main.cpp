@@ -4,58 +4,68 @@
 
 #include "Bureaucrat.hpp"
 
-int main(void)
+int	main(void)
 {
-	Bureaucrat francis("Francis", 100);
-	std::cout << francis << std::endl;
-	francis.incrementGrade();
-	std::cout << francis << std::endl;
-	francis.decrementGrade();
-	std::cout << francis << std::endl;
-
 	try
 	{
-		Bureaucrat jack("Jack", 0);
-		std::cout << jack << std::endl;
+		Form	f("Form1", 0, 1);
 	}
-	catch(std::exception const &e)
+	catch (std::exception &e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
-
+	std::cout << std::endl;
 	try
 	{
-		Bureaucrat jack("Jack", 1000);
-		std::cout << jack << std::endl;
+		Form	f("Form2", 1, 0);
 	}
-	catch(std::exception const &e)
+	catch (std::exception &e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
-
+	std::cout << std::endl;
 	try
 	{
-		Bureaucrat jack("Jack", 1);
-		std::cout << jack << std::endl;
-		jack.incrementGrade();
-		std::cout << jack << std::endl;
+		Form	f("Form3", 1, 151);
 	}
-	catch(std::exception const &e)
+	catch (std::exception &e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
-
+	std::cout << std::endl;
 	try
 	{
-		Bureaucrat jack("Jack", 150);
-		std::cout << jack << std::endl;
-		jack.decrementGrade();
-		std::cout << jack << std::endl;
+		Form	f("Form4", 151, 1);
 	}
-	catch(std::exception const &e)
+	catch (std::exception &e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
-
-	return (0);
+	std::cout << std::endl;
+	try
+	{
+		Bureaucrat	john = Bureaucrat("Johnny", 1);
+		Form		f("Form5", 150, 150);
+		std::cout << f << std::endl;
+		john.signForm(f);
+		std::cout << f << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	try
+	{
+		Bureaucrat	joe = Bureaucrat("Jared", 10);
+		Form		f("Form6", 1, 1);
+		std::cout << f << std::endl;
+		joe.signForm(f);
+		std::cout << f << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	return 0;
 }

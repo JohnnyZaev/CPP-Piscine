@@ -20,24 +20,32 @@ Form::Form(const Form &other) : _name(other._name), _isSigned(other._isSigned), 
 }
 
 Form &Form::operator=(const Form &other) {
-	*this(Form(other));
+	this->_isSigned = other._isSigned;
 	return *this;
 }
 
-std::string Form::getName() {
+const std::string Form::getName() const {
 	return _name;
 }
 
-int Form::getGradeToExecute() {
+int Form::getGradeToExecute() const {
 	return _gradeToExecute;
 }
 
-int Form::getGradeToSign() {
+int Form::getGradeToSign() const {
 	return _gradeToSign;
 }
 
-bool Form::isSigned() {
+bool Form::isSigned() const {
 	return _isSigned;
+}
+
+bool Form::beSigned(Bureaucrat &bureaucrat) {
+	if (bureaucrat.getGrade() <= this->_gradeToSign)
+		return (this->_isSigned = true);
+	else
+		throw GradeTooLowException();
+	return false;
 }
 
 const char *Form::GradeTooLowException::what() const throw() {

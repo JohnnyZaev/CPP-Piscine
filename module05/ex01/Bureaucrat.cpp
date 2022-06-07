@@ -57,6 +57,14 @@ void Bureaucrat::incrementGrade() {
 		throw GradeTooHighException();
 }
 
+void Bureaucrat::signForm(Form &form) {
+	if (this->_grade <= form.getGradeToSign())
+		std::cout << this->_name << " signs form " << form.getName() << std::endl;
+	else
+		std::cout << this->_name << " cannot sign form " << form.getName() << " because grade is too low" << std::endl;
+	form.beSigned(*this);
+}
+
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat)
 {
 	out  << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();

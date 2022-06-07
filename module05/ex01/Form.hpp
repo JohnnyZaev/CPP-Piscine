@@ -6,6 +6,9 @@
 #define CPP_PISCINE_FORM_HPP
 
 #include <iostream>
+#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
 private:
@@ -19,10 +22,11 @@ public:
 	Form(std::string name, int gradeToSign, int gradeToExecute);
 	~Form();
 
-	std::string getName();
-	bool isSigned();
-	int getGradeToSign();
-	int getGradeToExecute();
+	const std::string getName() const;
+	bool isSigned() const;
+	int getGradeToSign() const;
+	int getGradeToExecute() const;
+	bool beSigned(Bureaucrat &bureaucrat);
 
 	Form &operator=(const Form &other);
 

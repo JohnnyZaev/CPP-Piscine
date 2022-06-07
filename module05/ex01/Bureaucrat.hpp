@@ -6,6 +6,9 @@
 #define CPP_PISCINE_BUREAUCRAT_HPP
 
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 private:
@@ -22,6 +25,7 @@ public:
 	std::string getName() const;
 	void incrementGrade();
 	void decrementGrade();
+	void signForm(Form &form);
 
 	class GradeTooHighException: public std::exception {
 		virtual const char* what() const throw();
