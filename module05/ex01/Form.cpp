@@ -23,3 +23,36 @@ Form &Form::operator=(const Form &other) {
 	*this(Form(other));
 	return *this;
 }
+
+std::string Form::getName() {
+	return _name;
+}
+
+int Form::getGradeToExecute() {
+	return _gradeToExecute;
+}
+
+int Form::getGradeToSign() {
+	return _gradeToSign;
+}
+
+bool Form::isSigned() {
+	return _isSigned;
+}
+
+const char *Form::GradeTooLowException::what() const throw() {
+	return "FormException: Grade too Low";
+}
+
+const char *Form::GradeTooHighException::what() const throw() {
+	return "FormException: Grade too High";
+}
+
+std::ostream &operator<<(std::ostream &out, Form const &form)
+{
+	if (form.isSigned())
+		out  << form.getName() << ", signed form";
+	else
+		out  << form.getName() << ", not signed form with grade to sign " << form.getGradeToSign() << " and grade to execute " << form.getGradeToExecute();
+	return (out);
+}
