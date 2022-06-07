@@ -4,6 +4,7 @@
 
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int	main(void)
 {
@@ -34,26 +35,26 @@ int	main(void)
 //	{
 //		std::cout << e.what() << std::endl;
 //	}
-//	try
-//	{
-//		form = new RobotomyRequestForm("28B");
-//		form->beSigned(bob);
-//		form->execute(phil);
-//		form->execute(phil);
-//		form->execute(phil);
-//		form->execute(phil);
-//		form->execute(phil);
-//		form->execute(phil);
-//		form->execute(phil);
-//		form->execute(phil);
-//		form->execute(phil);
-//		delete form;
-//		form = NULL;
-//	}
-//	catch (std::exception &e)
-//	{
-//		std::cout << e.what() << std::endl;
-//	}
+	try
+	{
+		form = new RobotomyRequestForm("28B");
+		form->beSigned(bob);
+		form->execute(phil);
+		form->execute(phil);
+		form->execute(phil);
+		form->execute(phil);
+		form->execute(phil);
+		form->execute(phil);
+		form->execute(phil);
+		form->execute(phil);
+		form->execute(phil);
+		delete form;
+		form = NULL;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	try
 	{
 		form = new ShrubberyCreationForm("28C");

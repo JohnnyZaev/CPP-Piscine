@@ -7,11 +7,13 @@ CFLAGS	=	-Wall -Wextra -Werror  -std=c++98
 HEADERS	=	Bureaucrat.hpp\
 			Form.hpp\
 			ShrubberyCreationForm.hpp\
+			RobotomyRequestForm.hpp\
 
 SRC		=	main.cpp\
 			Bureaucrat.cpp\
 			Form.cpp\
 			ShrubberyCreationForm.cpp\
+			RobotomyRequestForm.cpp\
 
 OBJS		=	$(patsubst %.cpp, %.o, $(SRC))
 
