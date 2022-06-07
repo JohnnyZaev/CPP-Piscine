@@ -5,39 +5,35 @@
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main(void)
 {
 	Form			*form = NULL;
-	Bureaucrat		bob("bob", 1);
-	Bureaucrat		phil("phil", 40);
-	Bureaucrat		luc("luc", 150);
-//	try
-//	{
-//		form = new PresidentialPardonForm("28Z");
-//		form->execute(bob);
-//		delete form;
-//		form = NULL;
-//	}
-//	catch (std::exception &e)
-//	{
-//		std::cout << e.what() << std::endl;
-//	}
-//	try
-//	{
-//		form = new PresidentialPardonForm("28A");
-//		form->beSigned(bob);
-//		form->execute(bob);
-//		delete form;
-//		form = NULL;
-//	}
-//	catch (std::exception &e)
-//	{
-//		std::cout << e.what() << std::endl;
-//	}
+	Bureaucrat		bob("Boss of the gym", 1);
+	Bureaucrat		phil("Phillip", 40);
+	Bureaucrat		luc("Lucas", 150);
+
+	form = new PresidentialPardonForm("Stevie");
+	form->execute(bob);
+	delete form;
+	form = NULL;
+
 	try
 	{
-		form = new RobotomyRequestForm("28B");
+		form = new PresidentialPardonForm("Peter Griffin");
+		form->beSigned(bob);
+		form->execute(bob);
+		delete form;
+		form = NULL;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		form = new RobotomyRequestForm("Samurai");
 		form->beSigned(bob);
 		form->execute(phil);
 		form->execute(phil);
@@ -57,7 +53,7 @@ int	main(void)
 	}
 	try
 	{
-		form = new ShrubberyCreationForm("28C");
+		form = new ShrubberyCreationForm("Edward");
 		form->beSigned(bob);
 		phil.executeForm(*form);
 		form->execute(luc);

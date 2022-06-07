@@ -23,11 +23,12 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
 	}
 	if (executor.getGrade() <= this->getGradeToExecute())
 	{
+		std::cout << executor.getName() << " executed " << this->getName() << std::endl;
 		std::cout << "* drilling noises *" << std::endl;
 		std::this_thread::sleep_until(std::chrono::system_clock::now() + std::chrono::seconds(1));
 		srand((unsigned) time(0));
 		if (rand() % 2)
-			std::cout << this->getTarget() << "has been robotomized" << std::endl;
+			std::cout << this->getTarget() << " has been robotomized" << std::endl;
 		else
 			std::cout << "robotomy failed" << std::endl;
 	}

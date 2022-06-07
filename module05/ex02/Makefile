@@ -8,12 +8,14 @@ HEADERS	=	Bureaucrat.hpp\
 			Form.hpp\
 			ShrubberyCreationForm.hpp\
 			RobotomyRequestForm.hpp\
+			PresidentialPardonForm.hpp\
 
 SRC		=	main.cpp\
 			Bureaucrat.cpp\
 			Form.cpp\
 			ShrubberyCreationForm.cpp\
 			RobotomyRequestForm.cpp\
+			PresidentialPardonForm.cpp\
 
 OBJS		=	$(patsubst %.cpp, %.o, $(SRC))
 
