@@ -21,14 +21,19 @@ Intern &Intern::operator=(const Intern &other) {
 Form *Intern::makeForm(std::string name, std::string target) {
 	std::string forms[3] = {"presidential pardon", "robotomy request", "shrubbery creation"};
 	Form *returnForms[3] = {new PresidentialPardonForm(target), new RobotomyRequestForm(target), new ShrubberyCreationForm(target)};
+	Form *result = NULL;
 	for (int i = 0; i < 3; i++)
 	{
 		if (!name.compare(forms[i]))
 		{
 			std::cout << "Intern creates " << returnForms[i]->getName() << std::endl;
-			return returnForms[i];
+			result = returnForms[i];
+			continue;
 		}
+		delete returnForms[i];
 	}
+	if (result)
+		return result;
 	std::cout << "Intern don't know " << name << std::endl;
 	return NULL;
 }
