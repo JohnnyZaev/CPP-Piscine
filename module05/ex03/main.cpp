@@ -20,8 +20,10 @@ int	main(void)
 	if (form)
 		delete form;
 	form = usefulIdiot.makeForm("robotomy request", "Adam");
-	form->beSigned(paul);
-	form->execute(paul);
+	if (form) {
+		form->beSigned(paul);
+		form->execute(paul);
+	}
 	if (form)
 		delete form;
 }
