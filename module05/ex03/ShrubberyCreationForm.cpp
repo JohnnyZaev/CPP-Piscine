@@ -9,9 +9,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbe
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &form) : Form("ShrubberyCreationForm", 145, 137, form.getTarget()) {}
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &form) : Form("ShrubberyCreationForm", 145, 137, form.getTarget()) {}
 
-ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm &other) {
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
 	setTarget(other.getTarget());
 	return *this;
 }

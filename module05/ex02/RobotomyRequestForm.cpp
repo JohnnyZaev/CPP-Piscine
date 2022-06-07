@@ -8,9 +8,9 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyReq
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &form) : Form("RobotomyRequestForm", 72, 45, form.getTarget()) {}
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &form) : Form("RobotomyRequestForm", 72, 45, form.getTarget()) {}
 
-RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm &other) {
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
 	setTarget(other.getTarget());
 	return *this;
 }

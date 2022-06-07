@@ -8,9 +8,9 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("Presi
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &form) : Form("PresidentialPardonForm", 25, 5, form.getTarget()) {}
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &form) : Form("PresidentialPardonForm", 25, 5, form.getTarget()) {}
 
-PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm &other) {
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &other) {
 	setTarget(other.getTarget());
 	return *this;
 }
