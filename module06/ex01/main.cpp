@@ -6,7 +6,7 @@
 
 void castsmth(std::string str)
 {
-	std::cout << "Do smth" << std::endl;
+	std::cout << "Do smth twice kekw + " << str << std::endl;
 }
 
 int main(int argc, char** argv)
