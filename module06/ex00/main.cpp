@@ -44,6 +44,24 @@ void convertAndDisplay(std::string str)
 	{
 		std::cout << "Non displayable" << std::endl;
 	}
+	std::cout << "float: ";
+	try
+	{
+		float temp;
+		temp = std::stof(str);
+		std::cout << static_cast<float>(temp);
+		if (temp == static_cast<int>(temp))
+			std::cout << ".0";
+		std::cout << "f" << std::endl;
+	}
+	catch (std::invalid_argument&)
+	{
+		std::cout << "impossible" << std::endl;
+	}
+	catch (std::out_of_range&)
+	{
+		std::cout << "Non displayable" << std::endl;
+	}
 }
 
 int main(int argc, char** argv)
