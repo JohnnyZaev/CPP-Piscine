@@ -10,13 +10,13 @@ void convertAndDisplay(std::string str)
 	try
 	{
 		if (str.size() == 1 && !isdigit(str[0]))
-			std::cout << static_cast<char>(str[0]) << std::endl;
+			std::cout << "'" << static_cast<char>(str[0]) << "'" << std::endl;
 		else
 		{
 			std::size_t temp;
-			temp = std::stoi(str, &temp, 10);
+			temp = std::stoi(str);
 			if (isprint(temp))
-				std::cout << static_cast<char>(temp) << std::endl;
+				std::cout << "'" << static_cast<char>(temp) << "'" << std::endl;
 			else
 				std::cout << "Non displayable" << std::endl;
 		}
@@ -24,6 +24,25 @@ void convertAndDisplay(std::string str)
 	catch (std::invalid_argument&)
 	{
 		std::cout << "impossible" << std::endl;
+	}
+	catch (std::out_of_range&)
+	{
+		std::cout << "Non displayable" << std::endl;
+	}
+	std::cout << "int: ";
+	try
+	{
+		int temp;
+		temp = std::stoi(str);
+		std::cout << static_cast<int>(temp) << std::endl;
+	}
+	catch (std::invalid_argument&)
+	{
+		std::cout << "impossible" << std::endl;
+	}
+	catch (std::out_of_range&)
+	{
+		std::cout << "Non displayable" << std::endl;
 	}
 }
 
