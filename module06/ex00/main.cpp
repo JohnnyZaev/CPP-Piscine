@@ -6,7 +6,25 @@
 
 void convertAndDisplay(std::string str)
 {
-	std::cout << "Do smth twice kekw + " << str << std::endl;
+	std::cout << "char: ";
+	try
+	{
+		if (str.size() == 1 && !isdigit(str[0]))
+			std::cout << static_cast<char>(str[0]) << std::endl;
+		else
+		{
+			std::size_t temp;
+			temp = std::stoi(str, &temp, 10);
+			if (isprint(temp))
+				std::cout << static_cast<char>(temp) << std::endl;
+			else
+				std::cout << "Non displayable" << std::endl;
+		}
+	}
+	catch (std::invalid_argument&)
+	{
+		std::cout << "impossible" << std::endl;
+	}
 }
 
 int main(int argc, char** argv)
