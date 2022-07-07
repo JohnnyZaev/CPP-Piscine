@@ -62,6 +62,24 @@ void convertAndDisplay(std::string str)
 	{
 		std::cout << "Non displayable" << std::endl;
 	}
+	std::cout << "double: ";
+	try
+	{
+		double temp;
+		temp = std::stod(str);
+		std::cout << static_cast<double>(temp);
+		if (temp == static_cast<int>(temp))
+			std::cout << ".0";
+		std::cout << std::endl;
+	}
+	catch (std::invalid_argument&)
+	{
+		std::cout << "impossible" << std::endl;
+	}
+	catch (std::out_of_range&)
+	{
+		std::cout << "Non displayable" << std::endl;
+	}
 }
 
 int main(int argc, char** argv)
