@@ -4,13 +4,25 @@
 
 #include <iostream>
 
-int main(int argc, char** argv)
+struct Data
 {
-	if (argc != 2)
-	{
-		std::cout << "Not enough arguments" << std::endl;
-		return (EXIT_FAILURE);
-	}
-	std::string str = static_cast<std::string>(argv[1]);
-	return 0;
+	int i;
+	std::string str;
+	float f;
+};
+
+uintptr_t serialize(Data* ptr)
+{
+	return reinterpret_cast<uintptr_t>(ptr);
+}
+
+Data* deserialize(uintptr_t raw)
+{
+	return reinterpret_cast<Data *>(raw);
+}
+
+int main(void)
+{
+
+	return EXIT_SUCCESS;
 }
