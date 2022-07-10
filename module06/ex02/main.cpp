@@ -9,7 +9,6 @@ class Base
 {
 public:
 	virtual ~Base() {};
-	Base() {};
 };
 
 class A : public Base
@@ -81,14 +80,24 @@ int main(int argc, char** argv)
 {
 	if (argc != 2)
 	{
-		std::cout << "Not enough arguments" << std::endl;
+		std::cout << "Arguments error" << std::endl;
 		return (EXIT_FAILURE);
 	}
-	size_t times;
-	try { times = std::stoul(argv[1]); }
+	int times;
+	try { times = std::stoi(argv[1]); }
 	catch (std::invalid_argument&)
 	{
 		std::cout << "Pass an integer" << std::endl;
+		return EXIT_FAILURE;
+	}
+	catch (std::out_of_range&)
+	{
+		std::cout << "Integer is overflowed" << std::endl;
+		return EXIT_FAILURE;
+	}
+	if (times < 0)
+	{
+		std::cout << "Enter a positive value" << std::endl;
 		return EXIT_FAILURE;
 	}
 	Base *base;
