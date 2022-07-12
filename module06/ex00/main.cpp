@@ -18,7 +18,7 @@ void convertAndDisplay(std::string str)
 			if (isprint(temp))
 				std::cout << "'" << static_cast<char>(temp) << "'" << std::endl;
 			else
-				std::cout << "Non displayable" << std::endl;
+				throw std::out_of_range("Non displayable");
 		}
 	}
 	catch (std::invalid_argument&)

@@ -28,12 +28,9 @@ Base * generate(void)
 	Base* base;
 	int n = rand() % 3;
 
-	if (n == 0)
-		base = new A();
-	if (n == 1)
-		base = new B();
-	if (n == 2)
-		base = new C();
+	if (n == 0) { std::cout << "A created" << std::endl; base = new A(); }
+	if (n == 1) { std::cout << "B created" << std::endl; base = new B(); }
+	if (n == 2) { std::cout << "C created" << std::endl; base = new C(); }
 	return base;
 }
 
