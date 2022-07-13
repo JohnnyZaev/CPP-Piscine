@@ -4,7 +4,7 @@ CC		=	c++
 
 CFLAGS	=	-Wall -Wextra -Werror  -std=c++98
 
-HEADERS	=
+HEADERS	= TempHeader.hpp
 
 SRC		=	main.cpp\
 
