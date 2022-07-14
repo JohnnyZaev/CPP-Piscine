@@ -14,13 +14,13 @@ void swap(T &a, T &b)
 template<typename T>
 const T &min(const T &a, const T &b)
 {
-	return !(b < a) ? a : b;
+	return b > a ? a : b;
 }
 
 template<typename T>
 const T &max(const T &a, const T &b)
 {
-	return a < b ? b : a;
+	return b < a ? a : b;
 }
 
 #endif //CPP_PISCINE_TEMPHEADER_HPP
