@@ -1,10 +1,10 @@
-NAME	=	funcs
+NAME	=	array
 
 CC		=	c++
 
 CFLAGS	=	-Wall -Wextra -Werror  -std=c++98
 
-HEADERS	=	TempHeader.hpp
+HEADERS	=	Array.hpp
 
 SRC		=	main.cpp\
 

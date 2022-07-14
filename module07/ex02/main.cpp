@@ -2,26 +2,43 @@
 // Created by Johnny Zaev on 30.06.2022.
 //
 
-#include <iostream>
-#include "TempHeader.hpp"
-
-void minmin(int &a)
-{
-	a--;
-}
-
-template<typename T>
-void printa(T &a)
-{
-	std::cout << a << std::endl;
-}
+#include "Array.hpp"
 
 int main( void )
 {
-	int a[5] = {10, 9 ,8 ,7 ,6};
-	::iter(a, static_cast<std::size_t>(sizeof(a)/sizeof(a[0])), &minmin);
-	::iter(a, static_cast<std::size_t>(sizeof(a)/sizeof(a[0])), &printa);
-	std::string b[] = {"HATE", "THIS", "DAY"};
-	::iter(b, static_cast<std::size_t>(sizeof(b)/sizeof(b[0])), &printa);
+	Array<int>			intArray;
+	Array<std::string>	stringArray(7);
+	Array<std::string>	otherStringArray;
+	stringArray[0] = "Hi";
+	stringArray[1] = "Hello";
+	stringArray[2] = "How are you?";
+	stringArray[3] = "Fine and you?";
+	stringArray[4] = "Doing great thanks!";
+	stringArray[5] = "You're very welcome";
+	std::cout << "intArray.size() = " << intArray.Size() << std::endl;
+	std::cout << "stringArray.size() = " << stringArray.Size() << std::endl;
+	for (unsigned int i = 0; i < stringArray.Size(); i++)
+		std::cout << stringArray[i] << std::endl;
+	otherStringArray = stringArray;
+	otherStringArray[3] = "I'm good, how about you?";
+	for (unsigned int i = 0; i < otherStringArray.Size(); i++)
+		std::cout << otherStringArray[i] << std::endl;
+	try
+	{
+		std::cout << stringArray[59] << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		std::cout << stringArray[-3] << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
 	return EXIT_SUCCESS;
 }
