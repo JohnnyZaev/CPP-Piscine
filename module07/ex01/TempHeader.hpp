@@ -5,22 +5,14 @@
 #ifndef CPP_PISCINE_TEMPHEADER_HPP
 #define CPP_PISCINE_TEMPHEADER_HPP
 
-template<typename T>
-void swap(T &a, T &b)
-{
-	T c(a); a = b; b = c;
-}
+#include <iostream>
 
 template<typename T>
-const T &min(const T &a, const T &b)
+void iter(T *array, std::size_t len, void (*func)(const T&))
 {
-	return b > a ? a : b;
+	for (std::size_t i = 0; i < len; i++)
+		func(array[i]);
 }
 
-template<typename T>
-const T &max(const T &a, const T &b)
-{
-	return b < a ? a : b;
-}
 
 #endif //CPP_PISCINE_TEMPHEADER_HPP
