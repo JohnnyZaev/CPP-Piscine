@@ -2,7 +2,8 @@
 // Created by Johnny Zaev on 30.06.2022.
 //
 
-#include "Array.hpp"
+#include <iostream>
+#include <algorithm>
 
 int main( void )
 {
