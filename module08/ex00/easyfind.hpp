@@ -11,7 +11,12 @@
 template<typename T>
 typename T::iterator easyfind(T &cont, int value)
 {
-	return find(cont.begin(), cont.end(), value);
+	typename T::iterator result;
+	result = find(cont.begin(), cont.end(), value);
+	if (result == cont.end())
+		throw std::out_of_range("Value does not exist");
+	else
+		return result;
 }
 
 
