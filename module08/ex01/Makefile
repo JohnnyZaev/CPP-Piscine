@@ -1,12 +1,13 @@
-NAME	=	easyfind
+NAME	=	Span
 
 CC		=	c++
 
 CFLAGS	=	-Wall -Wextra -Werror  -std=c++98
 
-HEADERS	= easyfind.hpp
+HEADERS	= Span.hpp
 
 SRC		=	main.cpp\
+			Span.cpp\
 
 OBJS		=	$(patsubst %.cpp, %.o, $(SRC))
 
