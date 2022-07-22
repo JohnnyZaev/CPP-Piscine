@@ -6,8 +6,6 @@
 
 int main( void )
 {
-	int main()
-	{
 	Span sp = Span(5);
 	sp.addNumber(6);
 	sp.addNumber(3);
