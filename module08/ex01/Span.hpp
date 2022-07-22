@@ -11,6 +11,8 @@ class Span {
 private:
 	unsigned int _maxSize;
 	unsigned int _currentSize;
+	unsigned int _shortestSpan;
+	unsigned int _longestSpan;
 	std::vector<int> _data;
 public:
 
@@ -19,6 +21,8 @@ public:
 	Span(const Span &src);
 	~Span(void);
 	Span &operator=( const Span &rhs );
+	void addNumber(int number);
+	void fillSpan();
 	void shortestSpan();
 	void longestSpan();
 };
