@@ -8,7 +8,19 @@
 #include <iostream>
 
 class Span {
+private:
+	unsigned int _maxSize;
+	unsigned int _currentSize;
+	std::vector<int> _data;
+public:
 
+	Span(void);
+	Span(unsigned int maxSize);
+	Span(const Span &src);
+	~Span(void);
+	Span &operator=( const Span &rhs );
+	void shortestSpan();
+	void longestSpan();
 };
 
 
