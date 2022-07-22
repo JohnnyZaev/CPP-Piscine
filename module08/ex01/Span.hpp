@@ -6,6 +6,8 @@
 #define CPP_PISCINE_SPAN_HPP
 
 #include <iostream>
+#include <algorithm>
+#include <vector>
 
 class Span {
 private:
@@ -13,18 +15,16 @@ private:
 	unsigned int _currentSize;
 	unsigned int _shortestSpan;
 	unsigned int _longestSpan;
+	bool _needToFindSpans;
 	std::vector<int> _data;
+	void findSpans();
 public:
-
-	Span(void);
 	Span(unsigned int maxSize);
-	Span(const Span &src);
 	~Span(void);
-	Span &operator=( const Span &rhs );
 	void addNumber(int number);
 	void fillSpan();
-	void shortestSpan();
-	void longestSpan();
+	unsigned int shortestSpan();
+	unsigned int longestSpan();
 };
 
 
