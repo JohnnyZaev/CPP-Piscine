@@ -18,9 +18,9 @@ void Span::addNumber(int number) {
 		throw std::logic_error("Cant add more data to span");
 }
 
-void Span::fillSpan() {
-	for (std::vector<int>::iterator it = _data.begin() + _currentSize; it != _data.end(); it++)
-		*it = rand() % INT_MAX;
+void Span::fillSpan(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
+	for (; begin != end; begin++)
+		*begin = rand() % INT_MAX;
 	_needToFindSpans = true;
 }
 
@@ -52,3 +52,16 @@ unsigned int Span::shortestSpan() {
 		findSpans();
 	return _shortestSpan;
 }
+
+std::vector<int>::iterator Span::begin() {
+	return _data.begin();
+}
+
+std::vector<int>::iterator Span::end() {
+	return _data.end();
+}
+
+std::vector<int>::iterator Span::current() {
+	return _data.begin() + _currentSize;
+}
+
