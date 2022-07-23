@@ -25,6 +25,8 @@ void Span::fillSpan() {
 }
 
 void Span::findSpans() {
+	if (_currentSize < 2)
+		throw std::logic_error("Need more elements to find a span");
 	std::vector<int> tmp = _data;
 	sort(tmp.begin(), tmp.end());
 	_longestSpan = *(tmp.end() - 1) - *tmp.begin();
