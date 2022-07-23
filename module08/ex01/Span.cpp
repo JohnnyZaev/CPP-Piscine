@@ -21,6 +21,7 @@ void Span::addNumber(int number) {
 void Span::fillSpan() {
 	for (std::vector<int>::iterator it = _data.begin() + _currentSize; it != _data.end(); it++)
 		*it = rand() % INT_MAX;
+	_needToFindSpans = true;
 }
 
 void Span::findSpans() {
