@@ -4,10 +4,9 @@ CC		=	c++
 
 CFLAGS	=	-Wall -Wextra -Werror  -std=c++98
 
-HEADERS	= Span.hpp
+HEADERS	= MutantStack.hpp
 
 SRC		=	main.cpp\
-			Span.cpp\
 
 OBJS		=	$(patsubst %.cpp, %.o, $(SRC))
 

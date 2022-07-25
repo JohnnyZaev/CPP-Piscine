@@ -1,0 +1,8 @@
+//
+// Created by Johnny Zaev on 25.07.2022.
+//
+
+#ifndef CPP_PISCINE_MUTANTSTACK_HPP
+#define CPP_PISCINE_MUTANTSTACK_HPP
+
+#endif //CPP_PISCINE_MUTANTSTACK_HPP
