@@ -1,4 +1,4 @@
-NAME	=	Span
+NAME	=	MutantStack
 
 CC		=	c++
 
