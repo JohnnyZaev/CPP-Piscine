@@ -20,4 +20,5 @@ public:
 	iterator begin() const { return this->c.begin(); }
 	iterator end() const { return this->c.end(); }
 };
+
 #endif //CPP_PISCINE_MUTANTSTACK_HPP
