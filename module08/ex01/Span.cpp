@@ -4,7 +4,9 @@
 
 #include "Span.hpp"
 
-Span::Span(unsigned int maxSize) : _maxSize(maxSize), _currentSize(0), _shortestSpan(0), _longestSpan(0), _needToFindSpans(true) {}
+Span::Span(unsigned int maxSize) : _maxSize(maxSize), _currentSize(0), _shortestSpan(0), _longestSpan(0), _needToFindSpans(true) {
+//	_data = std::vector<int>(maxSize);
+}
 
 Span::~Span() {}
 
@@ -19,8 +21,10 @@ void Span::addNumber(int number) {
 }
 
 void Span::fillSpan(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
-	for (; begin != end; begin++)
+	for (; begin != end; begin++) {
 		*begin = rand() % INT_MAX;
+		_currentSize++;
+	}
 	_needToFindSpans = true;
 }
 
@@ -54,14 +58,13 @@ unsigned int Span::shortestSpan() {
 }
 
 std::vector<int>::iterator Span::begin() {
+	if (!_data.size())
+		_data = std::vector<int>(_maxSize);
 	return _data.begin();
 }
 
 std::vector<int>::iterator Span::end() {
+	if (!_data.size())
+		_data = std::vector<int>(_maxSize);
 	return _data.end();
 }
-
-std::vector<int>::iterator Span::current() {
-	return _data.begin() + _currentSize;
-}
-

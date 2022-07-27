@@ -36,14 +36,15 @@ public:
 			delete[] m_Data;
 	}
 
-	Array<T>( const Array<T> &other ) { *this = other; }
+	Array<T>( const Array<T> &other ) : m_Size(0), m_Data(NULL) { *this = other; }
 
 	Array<T>	&operator=( const Array<T> &other )
 	{
 		if (this == &other)
 			return *this;
-		if (this->m_Size > 0)
-			delete [] m_Data;
+		if (this->m_Size > 0) {
+			std::cout << m_Size << std::endl;
+			delete[] m_Data; }
 		this->m_Size = other.Size();
 		this->m_Data = new T[m_Size];
 		for (unsigned int i = 0; i < Size(); i++)

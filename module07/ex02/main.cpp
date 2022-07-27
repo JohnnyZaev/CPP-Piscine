@@ -39,6 +39,12 @@ int main( void )
 	{
 		std::cout << e.what() << std::endl;
 	}
+	{
+		Array<int> someshit(5);
+		someshit[2] = 15;
+		Array<int> tmp = someshit;
+		Array<int> test(tmp);
+	}
 
 	return EXIT_SUCCESS;
 }

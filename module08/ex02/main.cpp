@@ -6,7 +6,6 @@
 
 int main( void )
 {
-	std::stack<int> stack;
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
@@ -28,5 +27,10 @@ int main( void )
 		++it;
 	}
 	std::stack<int> s(mstack);
+
+	std::stack<int> stack;
+//	stack.begin();
+//	stack.end();
+
 	return EXIT_SUCCESS;
 }

@@ -5,10 +5,9 @@
 #include <iostream>
 #include <vector>
 #include <list>
-#include <algorithm>
 #include "easyfind.hpp"
 
-int main( void )
+int main()
 {
 	//*** VECTOR ***
 	std::vector<int> vect;
